@@ -1,0 +1,47 @@
+:root {
+  --bg: #3d8ad2;
+}
+
+* {
+  font-family: sans-serif;
+  margin: 0.5vw;
+  padding: 0;
+  font-size: 1.3vw;
+  color: white;
+  background: var(--bg);
+}
+
+body {
+  background: none;
+}
+
+div {
+  text-align: center;
+  position: relative;
+  top: 30vh;
+  margin: 0 25vw;
+  background: none;
+}
+
+div > * {
+  background: none;
+}
+
+h1 {
+  font-size: 2.5vw;
+}
+
+#name-text {
+  font-style: italic;
+  font-size: 1.4vw;
+}
+
+button {
+  position: absolute;
+  top: 15vw;
+  left: 16vw;
+  font-variant: small-caps;
+  margin: 1vw;
+  padding: 0.5vw 1vw;
+  background: #333;
+}
