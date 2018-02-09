@@ -17,7 +17,7 @@ $(document).ready(function() {
     /*newQuote = quotes[Math.floor(Math.random() * 10)];
     document.getElementById('quote-text').textContent = '"' + newQuote.quote + '"';
     document.getElementById('name-text').textContent = newQuote.name;*/
-    var url = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
+    var url = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
     $.getJSON(url, function(data) {
       document.getElementById('quote-text').textContent = '"' + data.quoteText + '"';
       document.getElementById('name-text').textContent = data.quoteAuthor;
@@ -46,7 +46,7 @@ function getQuote() {
   /*newQuote = quotes[Math.floor(Math.random() * 10)];
   document.getElementById('quote-text').textContent = '"' + newQuote.quote + '"';
   document.getElementById('name-text').textContent = newQuote.name;*/
-  var url = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
+  var url = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
   $.getJSON(url, function(data) {
     document.getElementById('quote-text').textContent = '"' + data.quoteText + '"';
     document.getElementById('name-text').textContent = data.quoteAuthor;
