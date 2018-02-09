@@ -8,14 +8,16 @@
 
   <div>
     <h1>Random Quote Generator</h1>
-    <br>
-    <span id="quote-text">"In three words I can sum up everything I've learned about life: it goes on."</span>
+    <br><hr><br>
+    <span id="quote-text"></span>
     <br><br>
-    <span id="name-text">Robert Frost</span>
+    <span id="name-text"></span>
     <br><br><hr><br>
     <button onclick="getQuote(); changeColor()">Generate Quote</button>
+    <button id="tweet" onclick="tweetQuote()">Tweet</button>
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="main.js"></script>
 
 </body>

@@ -1,5 +1,5 @@
 :root {
-  --bg: #3d8ad2;
+  --bg: #142651;
 }
 
 * {
@@ -9,6 +9,7 @@
   font-size: 1.3vw;
   color: white;
   background: var(--bg);
+  transition: background-color 0.5s linear;
 }
 
 body {
@@ -38,10 +39,18 @@ h1 {
 
 button {
   position: absolute;
-  top: 15vw;
+  top: 18vw;
   left: 16vw;
   font-variant: small-caps;
   margin: 1vw;
   padding: 0.5vw 1vw;
-  background: #333;
+  background: #222;
+  border-radius: 0.5vw;
+  outline: none;
+}
+
+#tweet {
+  top: 21.5vw;
+  left: 19.5vw;
+  background: #00aced;
 }
