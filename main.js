@@ -12,11 +12,47 @@ const quotes = [{name: "Dr. Seuss", quote: "Don't cry because it's over, smile b
 const colorCodes = '0123456789abcdef';
 
 
+$(document).ready(function() {
+  function getQuote() {
+    /*newQuote = quotes[Math.floor(Math.random() * 10)];
+    document.getElementById('quote-text').textContent = '"' + newQuote.quote + '"';
+    document.getElementById('name-text').textContent = newQuote.name;*/
+    var url = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
+    $.getJSON(url, function(data) {
+      document.getElementById('quote-text').textContent = '"' + data.quoteText + '"';
+      document.getElementById('name-text').textContent = data.quoteAuthor;
+    });
+  }
+
+
+  function changeColor() {
+    var newColor = '#';
+    for (var i = 0; i < 6; i++) {
+      newColor += colorCodes[Math.floor(Math.random() * 8)];
+    }
+    document.querySelector('*').style.setProperty('--bg', newColor);
+  }
+
+  function tweetQuote() {
+    window.open(`https://twitter.com/intent/tweet/?text=${document.getElementById('quote-text').textContent} -${document.getElementById('name-text').textContent}`);
+  }
+
+  getQuote()
+  changeColor()
+
+});
+
 function getQuote() {
-  newQuote = quotes[Math.floor(Math.random() * 10)];
+  /*newQuote = quotes[Math.floor(Math.random() * 10)];
   document.getElementById('quote-text').textContent = '"' + newQuote.quote + '"';
-  document.getElementById('name-text').textContent = newQuote.name;
+  document.getElementById('name-text').textContent = newQuote.name;*/
+  var url = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
+  $.getJSON(url, function(data) {
+    document.getElementById('quote-text').textContent = '"' + data.quoteText + '"';
+    document.getElementById('name-text').textContent = data.quoteAuthor;
+  });
 }
+
 
 function changeColor() {
   var newColor = '#';
@@ -24,4 +60,8 @@ function changeColor() {
     newColor += colorCodes[Math.floor(Math.random() * 8)];
   }
   document.querySelector('*').style.setProperty('--bg', newColor);
+}
+
+function tweetQuote() {
+  window.open(`https://twitter.com/intent/tweet/?text=${document.getElementById('quote-text').textContent} -${document.getElementById('name-text').textContent}`);
 }
